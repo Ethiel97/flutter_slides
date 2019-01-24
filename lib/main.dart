@@ -150,15 +150,7 @@ class MyHomePageState extends State<MyHomePage> {
                     SizedBox(
                       height: 55.0,
                     ),
-                    new ParallaxContainer(
-                      position: info.position,
-                      translationFactor: 500.0,
-                      child: Dots(
-                        controller: controller,
-                        slideIndex: _slideIndex,
-                        numberOfDots: images.length,
-                      ),
-                    )
+                    
                   ],
                 ),
               ),
@@ -174,74 +166,3 @@ class MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class Dots extends StatelessWidget {
-  final IndexController controller;
-  final int slideIndex;
-  final int numberOfDots;
-
-  Dots({this.controller, this.slideIndex, this.numberOfDots});
-
-  List<Widget> _generateDots() {
-    List<Widget> dots = [];
-    for (int i = 0; i < numberOfDots; i++) {
-      dots.add(i == slideIndex ? _activeSlide(i) : _inactiveSlide(i));
-    }
-
-    return dots;
-  }
-
-  Widget _activeSlide(int index) {
-    return GestureDetector(
-      onTap: () {
-        print('Tapped');
-        // controller.move(index);
-      },
-      child: new Container(
-        child: Padding(
-          padding: EdgeInsets.only(left: 8.0, right: 8.0),
-          child: Container(
-            width: 20.0,
-            height: 20.0,
-            decoration: BoxDecoration(
-              color: Colors.orangeAccent.withOpacity(.3),
-              borderRadius: BorderRadius.circular(50.0),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _inactiveSlide(int index) {
-    return GestureDetector(
-      onTap: () {
-        // print(controller.index);
-        // PageController controller = new PageController();
-
-// controller.jumpTo(value)
-        controller.move(index);
-      },
-      child: new Container(
-        child: Padding(
-          padding: EdgeInsets.only(left: 5.0, right: 5.0),
-          child: Container(
-            width: 14.0,
-            height: 14.0,
-            decoration: BoxDecoration(
-                color: Colors.grey.withOpacity(0.7),
-                borderRadius: BorderRadius.circular(50.0)),
-          ),
-        ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-        child: Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: _generateDots(),
-    ));
-  }
-}
