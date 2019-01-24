@@ -194,7 +194,6 @@ class Dots extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         print('Tapped');
-        // controller.move(index);
       },
       child: new Container(
         child: Padding(
@@ -214,11 +213,7 @@ class Dots extends StatelessWidget {
 
   Widget _inactiveSlide(int index) {
     return GestureDetector(
-      onTap: () {
-        // print(controller.index);
-        // PageController controller = new PageController();
-
-// controller.jumpTo(value)
+      onTap: () {        
         controller.move(index);
       },
       child: new Container(
