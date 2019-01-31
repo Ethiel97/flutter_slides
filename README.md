@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+- [Part one tutorial](https://pusher.com/onboarding-flutter-part-1)
+- [Part two tutorial](https://pusher.com/onboarding-flutter-part-2)
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
