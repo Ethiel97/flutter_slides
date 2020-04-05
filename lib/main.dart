@@ -62,7 +62,7 @@ class MyHomePageState extends State<MyHomePage> {
   final List<String> text1 = [
     "App for food lovers, satisfy your taste",
     "Find best meals in your area, simply",
-    "Have fun while eating your relatives and more",
+    "Have fun while eating with your relatives and more",
     "Meet new friends from all over the world"
   ];
 
